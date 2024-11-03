@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'NFT App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.latoTextTheme(textTheme).copyWith(
+        textTheme: GoogleFonts.robotoTextTheme(textTheme).copyWith(
           bodyMedium: GoogleFonts.roboto(textStyle: textTheme.bodyMedium),
         ),
       ),

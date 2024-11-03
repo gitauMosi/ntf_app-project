@@ -9,42 +9,48 @@ class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Image.asset(
-              "assets/icons/nft.png",
-              width: MediaQuery.of(context).size.width * 0.80,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/icons/nft.png",
+                  width: MediaQuery.of(context).size.width * 0.80,
+                ),
+                const Text(
+                  "Hey! Welcome",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                  ),
+                ),
+                const Text(
+                  "This is a best-fit  app to Invest in Cryptocurrency for beginners and do trading.",
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                CustomBtn1(
+                    label: "Get Started",
+                    function: () {
+                      Get.offAll(() => LoginScreen());
+                    }),
+                const SizedBox(
+                  height: 15,
+                ),
+                CustomBtn1(
+                  label: "I already have an account",
+                  function: () {},
+                  color: Colors.grey,
+                ),
+              ],
             ),
-            const Text(
-              "Hey! Welcome",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-              ),
-            ),
-            const Text(
-              "This is a best-fit  app to Invest in Cryptocurrency for beginners and do trading.",
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            CustomBtn1(
-                label: "Get Started",
-                function: () {
-                  Get.offAll(() => LoginScreen());
-                }),
-            const SizedBox(
-              height: 15,
-            ),
-            CustomBtn1(
-              label: "I already have an account",
-              function: () {},
-              color: Colors.grey,
-            ),
-          ],
+          ),
         ),
       ),
     );
